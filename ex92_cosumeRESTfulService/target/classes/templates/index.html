@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View Student Page-Index</title>
+	<script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+</head>
+
+<body>
+	<h1>View Students</h1>
+
+
+	<h3 th:each="student : ${studentList}">
+	
+		<a href="#" th:onclick="'getStudentInfo('+ ${student.id} + ')'" th:text="${student.name}">Name</a>
+
+		<div th:id="'student' + ${student.id}"></div>
+	</h3>
+
+
+</body>
+</html>
